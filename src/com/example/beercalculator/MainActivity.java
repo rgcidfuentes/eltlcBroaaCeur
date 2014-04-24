@@ -64,13 +64,7 @@ public class MainActivity extends Activity {
         		 start_val = 0;
         	 }
         	 else {
-        		 try{
-        			 start_val = Double.valueOf(origin.getText().toString());
-        		 }
-        		 catch(NumberFormatException e){
-        			 start_val = 0.0;
-        			 origin.setText("");
-        		 }
+        		 start_val = Double.valueOf(origin.getText().toString());
         	 }
         	 
         	 if (end.getText().length() == 0){
@@ -88,7 +82,11 @@ public class MainActivity extends Activity {
         	 abv = calculateAbv(sgStart,sgEnd);
         	 
         	 //grados.setText( origin.getText().toString() );
-        	 grados.setText(String.format("%.2f", abv)+" %");
+        	 String s1= "Origin Gravity: " + String.format("%.1f", sgStart*1000);
+        	 String s2= "Final Gravity: " + String.format("%.1f", sgEnd*1000);
+        	 String s3= "ABV: " + String.format("%.2f", abv) + " %";
+        	 
+        	 grados.setText(s1 + System.getProperty("line.separator") + s2 + System.getProperty("line.separator") + System.getProperty("line.separator") + s3);
          }
  };
 
