@@ -17,8 +17,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="0"
-        android:imeOptions="actionSend"
-        android:inputType="number" >
+        android:imeOptions="actionSend" >
 
         <requestFocus />
     </EditText>
@@ -31,8 +30,7 @@
         android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="0"
-        android:imeOptions="actionSend"
-        android:inputType="number" />
+        android:imeOptions="actionSend"/>
 
     <TextView
         android:id="@+id/grados"
@@ -40,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
-        android:text="Large Text"
+        android:text="0 %"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

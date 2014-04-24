@@ -1,5 +1,7 @@
 package com.example.beercalculator;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,9 +15,11 @@ public class MainActivity extends Activity {
 	EditText origin;
 	EditText end;
 	TextView grados;
+	DecimalFormat df;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		df = new DecimalFormat("#.00");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		origin=(EditText)findViewById(R.id.origin);
@@ -60,7 +64,13 @@ public class MainActivity extends Activity {
         		 start_val = 0;
         	 }
         	 else {
-        		 start_val = Double.valueOf(origin.getText().toString());
+        		 try{
+        			 start_val = Double.valueOf(origin.getText().toString());
+        		 }
+        		 catch(NumberFormatException e){
+        			 start_val = 0.0;
+        			 origin.setText("");
+        		 }
         	 }
         	 
         	 if (end.getText().length() == 0){
@@ -78,7 +88,7 @@ public class MainActivity extends Activity {
         	 abv = calculateAbv(sgStart,sgEnd);
         	 
         	 //grados.setText( origin.getText().toString() );
-        	 grados.setText(String.valueOf(abv));
+        	 grados.setText(String.format("%.2f", abv)+" %");
          }
  };
 
