@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
         	 abv = calculateAbv(sgStart,sgEnd);
         	 
         	 //grados.setText( origin.getText().toString() );
-        	 String s1= "Origin Gravity: " + String.format("%.1f", sgStart*1000);
+        	 String s1= "Original Gravity: " + String.format("%.1f", sgStart*1000);
         	 String s2= "Final Gravity: " + String.format("%.1f", sgEnd*1000);
         	 String s3= "ABV: " + String.format("%.2f", abv) + " %";
         	 
